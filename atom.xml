@@ -127,20 +127,28 @@
     <link href="http://example.com/2023/06/03/VMware-%E8%AE%A9%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%80%9A%E8%BF%87%E4%B8%BB%E6%9C%BA%E4%BB%A3%E7%90%86%E4%B8%8A%E7%BD%91/"/>
     <id>http://example.com/2023/06/03/VMware-%E8%AE%A9%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%80%9A%E8%BF%87%E4%B8%BB%E6%9C%BA%E4%BB%A3%E7%90%86%E4%B8%8A%E7%BD%91/</id>
     <published>2023-06-03T15:58:33.000Z</published>
-    <updated>2023-06-03T16:07:56.157Z</updated>
+    <updated>2023-06-03T18:32:54.193Z</updated>
     
-    <content type="html"><![CDATA[<p>Ubuntu 20.04.6 LTS</p><p>VMware Workstation 17 Pro 17.0.0</p><p class='item-img' data-src='/..%5Cimages%5C%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%80%82%E9%85%8D%E5%99%A8%E8%AE%BE%E7%BD%AE.png'><img src="/..%5Cimages%5C%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%80%82%E9%85%8D%E5%99%A8%E8%AE%BE%E7%BD%AE.png" alt="虚拟机网络适配器设置"></p>]]></content>
+    <content type="html"><![CDATA[<p>Ubuntu 20.04.6 LTS</p><p>VMware Workstation 17 Pro 17.0.0</p><p>windows 10</p><p>首先更改虚拟机的网络适配器设置如下：</p><p class='item-img' data-src='/.%5Cimages%5CVMware%5C%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%80%82%E9%85%8D%E5%99%A8%E8%AE%BE%E7%BD%AE.png'><img src="/.%5Cimages%5CVMware%5C%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%80%82%E9%85%8D%E5%99%A8%E8%AE%BE%E7%BD%AE.png" alt="虚拟机网络适配器设置"></p><p>之后打开代理软件，允许局域网连接并记录端口号（v2rayN为例）：</p><p class='item-img' data-src='/.%5Cimages%5CVMware%5C%E4%BB%A3%E7%90%86%E8%BD%AF%E4%BB%B6%E8%AE%BE%E7%BD%AE.png'><img src="/.%5Cimages%5CVMware%5C%E4%BB%A3%E7%90%86%E8%BD%AF%E4%BB%B6%E8%AE%BE%E7%BD%AE.png" alt="代理软件设置"></p><p>命令行输入ipconfig，得到主机ip地址：</p><p class='item-img' data-src='/.%5Cimages%5CVMware%5C%E6%9C%AC%E6%9C%BAip.png'><img src="/.%5Cimages%5CVMware%5C%E6%9C%AC%E6%9C%BAip.png" alt="本机ip"></p><p>打开Ubuntu网络设置，代理设置改为手动，输入本机ip地址，只需要填端口号即可：</p><p class='item-img' data-src='/.%5Cimages%5CVMware%5C%E7%AB%AF%E5%8F%A3%E5%8F%B7.png'><img src="/.%5Cimages%5CVMware%5C%E7%AB%AF%E5%8F%A3%E5%8F%B7.png" alt="端口号"></p><p>需要注意，虽然之前得到监听端口为8888,但在v2rayN中局域网连接的端口一般为为监听端口+2~+3，因此此处端口为8890，如下图：</p><p class='item-img' data-src='/.%5Cimages%5CVMware%5C%E7%AB%AF%E5%8F%A3.png'><img src="/.%5Cimages%5CVMware%5C%E7%AB%AF%E5%8F%A3.png" alt="端口"></p><p>至此虚拟机就可以用宿主机的代理愉快上网啦：</p><p class='item-img' data-src='/.%5Cimages%5CVMware%5Cresult.png'><img src="/.%5Cimages%5CVMware%5Cresult.png" alt="result"></p>]]></content>
     
     
       
       
     <summary type="html">&lt;p&gt;Ubuntu 20.04.6 LTS&lt;/p&gt;
 &lt;p&gt;VMware Workstation 17 Pro 17.0.0&lt;/p&gt;
-&lt;p class=&#39;item-img&#39; data-src=&#39;/..%5Cimages%5C%E8%99%9A%E6%8B%9F%E6%9C%BA%E</summary>
+&lt;p&gt;windows 10&lt;/p&gt;
+&lt;p&gt;首先更改虚拟机的网络适配器设置如下：&lt;/p&gt;
+&lt;p class=&#39;item-img&#39; data-src=&#39;</summary>
       
     
     
     
+    <category term="虚拟机" scheme="http://example.com/categories/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+    
+    
+    <category term="虚拟机" scheme="http://example.com/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+    
+    <category term="VMware" scheme="http://example.com/tags/VMware/"/>
     
   </entry>
   
