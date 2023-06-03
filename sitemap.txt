@@ -1,2 +1,16 @@
+http://example.com/2023/06/03/VMware-%E8%AE%A9%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%80%9A%E8%BF%87%E4%B8%BB%E6%9C%BA%E4%BB%A3%E7%90%86%E4%B8%8A%E7%BD%91/
+http://example.com/2023/06/04/function%E2%80%94%E2%80%94C%E8%AF%AD%E8%A8%80%E5%87%BD%E6%95%B0/
+http://example.com/2023/06/04/C%E8%AF%AD%E8%A8%80%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%80%BB%E7%BB%93/
+http://example.com/2023/06/04/%E6%B4%9B%E8%B0%B7P1124%E9%A2%98%E8%A7%A3%E2%80%94%E2%80%94%E6%96%87%E4%BB%B6%E5%8E%8B%E7%BC%A9/
 http://example.com/2023/06/04/hello-world/
 http://example.com/
+http://example.com/tags/C%E8%AF%AD%E8%A8%80/
+http://example.com/tags/%E8%AF%AD%E6%B3%95/
+http://example.com/tags/hello-world/
+http://example.com/tags/python/
+http://example.com/tags/%E6%B4%9B%E8%B0%B7/
+http://example.com/tags/c/
+http://example.com/categories/%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93/
+http://example.com/categories/%E6%9D%82%E8%B0%88/
+http://example.com/categories/%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93/C%E8%AF%AD%E8%A8%80/
+http://example.com/categories/%E9%A2%98%E8%A7%A3/
