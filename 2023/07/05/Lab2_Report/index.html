@@ -1,0 +1,262 @@
+<!DOCTYPE html><html lang="en-us" theme-mode="auto"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>xv6-Lab2 | J's Blog</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"Enter here","blurHolder":"Search","noResult":"Data \"$0\" not found"},"code":{"codeInfo":"$0 - $1 lines","copy":"copy","copyFinish":"copied","expand":"expand"}}</script><script src="//unpkg.com/mermaid@9.2.2/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/brands.min.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/fontawesome.min.css"><link rel="stylesheet" href="/css/arknights.css"><script>if (window.localStorage.getItem('theme-mode') === 'light' || window.matchMedia('(prefers-color-scheme:light)').matches) document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark' || window.matchMedia('(prefers-color-scheme:dark)').matches) document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.ttf");
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+@font-face {
+ font-family: 'Font Awesome 6 Brands';
+ src: local('Font Awesome 6 Brands'), url('/lib/fontawesome/fa-brands.woff2') format('woff2');
+}
+@font-face {
+ font-family: 'Font Awesome 6 Free';
+ src: local('Font Awesome 6 Free'), url('/lib/fontawesome/fa-regular.woff2') format('woff2');
+}</style><style>:root {
+  --dark-background: url('https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg');
+  --light-background: url('/img/bk.jpg');
+}</style><meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style><link rel="alternate" href="/atom.xml" title="J's Blog" type="application/atom+xml">
+</head><body><div class="loading" style="opacity: 0"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><nav><div class="navBtn hide"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>xv6-Lab2</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2023-07-05T12:21:33.423Z" id="date"> 2023-07-05</time></div></span><br><span>Last Update: <div class="control"><time datetime="2023-07-05T12:29:37.140Z" id="updated"> 2023-07-05</time></div></span><br><span>Word Count: <div class="control">1.9k</div></span><br><span>Read Time: <div class="control">8 min</div></span></div></div><hr><div id="post-content"><h1 id="Lab-2"><a href="#Lab-2" class="headerlink" title="Lab 2"></a>Lab 2</h1><h2 id="using-gdb"><a href="#using-gdb" class="headerlink" title="using gdb"></a>using gdb</h2><blockquote>
+<p>Q1:Looking at the backtrace output,which function called syscall?</p>
+</blockquote>
+<p>执行backtrace后结果如下：</p>
+<p class='item-img' data-src='/2023/07/05/Lab2_Report/image/image.png'><img src="/2023/07/05/Lab2_Report/image/image.png" alt="backtrace result"></p>
+<p>由图可知是函数<code>usertrap()</code>调用了<code>syscall()</code>函数.</p>
+<blockquote>
+<p>Q2:What is the value of <code>p-&gt;trapframe-&gt;a7</code> and what does that value represent?(Hint:look <code>user/initcode.S</code>,the first user program xv6 starts.)</p>
+</blockquote>
+<p>首先输入两次n之后执行结果如下：</p>
+<p class='item-img' data-src='/2023/07/05/Lab2_Report/image/image-1.png'><img src="/2023/07/05/Lab2_Report/image/image-1.png" alt="after type n"></p>
+<p>语句<code>struct proc *p = myproc()</code>执行完毕，接着执行<code>p/x *p</code>看p的内容如下：</p>
+<p class='item-img' data-src='/2023/07/05/Lab2_Report/image/image-2.png'><img src="/2023/07/05/Lab2_Report/image/image-2.png" alt="after *p"></p>
+<p>此时查看<code>p-&gt;trapframe-&gt;a7</code>的值：</p>
+<p class='item-img' data-src='/2023/07/05/Lab2_Report/image/image-3.png'><img src="/2023/07/05/Lab2_Report/image/image-3.png" alt="p->trapframe->a7"></p>
+<p>得到<code>a7</code>的值为<code>7</code>。<br>根据<code>user/initcode.S</code>以及参考书第二章内容可知寄存器<code>a7</code>保存了系统将要执行的系统调用号，这里的系统调用号为<code>7</code>,由<code>kernel/syscall.h</code>的内容（下图）可知系统调用为<code>SYS_exec</code>。</p>
+<p class='item-img' data-src='/2023/07/05/Lab2_Report/image/image-4.png'><img src="/2023/07/05/Lab2_Report/image/image-4.png" alt="SYScall"></p>
+<blockquote>
+<p>Q3:What was the previous mode that the CPU was in?</p>
+</blockquote>
+<p>在gdb中输入<code>p /x $sstatus</code>得到如下结果：</p>
+<p class='item-img' data-src='/2023/07/05/Lab2_Report/image/image-5.png'><img src="/2023/07/05/Lab2_Report/image/image-5.png" alt="sstatus"></p>
+<p>其值转换为二进制为：<code>0b100010</code>,在参考书<a target="_blank" rel="noopener" href="https://github.com/riscv/riscv-isa-manual/releases/download/Priv-v1.12/riscv-privileged-20211203.pdf">RISC-V privileged instructions</a>中找到sstatus的值定义如下：</p>
+<p class='item-img' data-src='/2023/07/05/Lab2_Report/image/image-6.png'><img src="/2023/07/05/Lab2_Report/image/image-6.png" alt="sstatus_bit"></p>
+<p>同时对于其<code>SPP</code>位有描述如下：</p>
+<blockquote>
+<p>The SPP bit indicates the privilege level at which a hart was executing before entering supervisor mode. When a trap is taken, SPP is set to 0 if the trap originated from user mode, or 1 otherwise. When an SRET instruction (see Section 3.3.2) is executed to return from the trap handler, the privilege level is set to user mode if the SPP bit is 0, or supervisor mode if the SPP bit is 1; SPP is then set to 0.</p>
+<p>SPP 位指示进入管理员模式之前 hart 执行的特权级别。 当采取陷阱时，如果陷阱源自用户模式，则 SPP 设置为 0，否则设置为 1。 当执行 SRET 指令（见第 3.3.2 节）从陷阱处理程序返回时，如果 SPP 位为 0，则特权级别设置为用户模式，如果 SPP 位为 1，则设置为超级用户模式； 然后将 SPP 设置为 0。</p>
+</blockquote>
+<p>因此，因为此时<code>SPP</code>位为<code>0</code>,所以在<code>syscall</code>之前系统处于用户模式(<code>User mode</code>)。</p>
+<blockquote>
+<p>Q4:Write down the assembly instruction the kernel is panicing at.Which register corresponds to the varialable num?</p>
+</blockquote>
+<p>首先按照指导将<code>kernel/syscall.c</code>中<code>syscall</code>函数中的<code>num = p-&gt;trapframe-&gt;a7</code>改为<code>num = * (int *) 0</code>,接着执行<code>make qemu</code>得到如下输出：</p>
+<p class='item-img' data-src='/2023/07/05/Lab2_Report/image/image-9.png'><img src="/2023/07/05/Lab2_Report/image/image-9.png" alt="panic"></p>
+<p>在<code>kernel/kernel.asm</code>中查找上图中的<code>sepc</code>值，得到结果如下图：</p>
+<p class='item-img' data-src='/2023/07/05/Lab2_Report/image/image-10.png'><img src="/2023/07/05/Lab2_Report/image/image-10.png" alt="assemblely"></p>
+<p>对应的汇编指令为<code>lw a3,0(zero)</code>,由参考书<a target="_blank" rel="noopener" href="https://web.eecs.utk.edu/~smarz1/courses/ece356/notes/assembly/">RISC-V Assembly Language</a>,</p>
+<p class='item-img' data-src='/2023/07/05/Lab2_Report/image/image-11.png'><img src="/2023/07/05/Lab2_Report/image/image-11.png" alt="lw"></p>
+<p>这条汇编代码代表：将内存中地址从<code>0</code>开始的一个字<code>word(2bytes)</code>大小的数据加载到寄存器<code>a3</code>中。</p>
+<blockquote>
+<p>Q5:Why does the kernel crash?Hint:look at figure 3-3 in the text;is address 0 mapped in the kernel address space?Is that confirmed by the value in scause above?(See<br>description of scause in RISC-V privileged instructions)</p>
+</blockquote>
+<p>首先按照实验要求在上文<code>panic</code>的代码处打上断点并继续执行，结果如下：</p>
+<p class='item-img' data-src='/2023/07/05/Lab2_Report/image/image-12.png'><img src="/2023/07/05/Lab2_Report/image/image-12.png" alt="breakpoint"></p>
+<p>此时再次输入<code>n</code>并执行会引起内核<code>panic</code>,如下：</p>
+<p class='item-img' data-src='/2023/07/05/Lab2_Report/image/image-13.png'><img src="/2023/07/05/Lab2_Report/image/image-13.png" alt="n"><br class='item-img' data-src='/2023/07/05/Lab2_Report/image/image-14.png'><img src="/2023/07/05/Lab2_Report/image/image-14.png" alt="panic"></p>
+<p>使用<code>Ctrl+C</code>来退出当前线程并打印<code>scause</code>的值如下：</p>
+<p class='item-img' data-src='/2023/07/05/Lab2_Report/image/image-15.png'><img src="/2023/07/05/Lab2_Report/image/image-15.png" alt="scause"></p>
+<p>接着开始分析：首先根据参考书<a target="_blank" rel="noopener" href="https://pdos.csail.mit.edu/6.828/2022/xv6/book-riscv-rev3.pdf">book-riscv-rev3</a>中的<code>Figure 3.3</code>(如下图)，</p>
+<p class='item-img' data-src='/2023/07/05/Lab2_Report/image/image-16.png'><img src="/2023/07/05/Lab2_Report/image/image-16.png" alt="F"></p>
+<p>内核地址空间基地址为<code>0x80000000</code>,因此代码中的数据地址<code>0</code>不映射到内核地址空间中，因此内核会崩溃。</p>
+<p>而<code>scause</code>的值为13，在参考书<a target="_blank" rel="noopener" href="https://web.eecs.utk.edu/~smarz1/courses/ece356/notes/assembly/">RISC-V Assembly Language</a>的<code>Table 8.6</code>(如下图)中可以查到代码<code>13</code>对应<code>Load page fault</code>，验证了结论。</p>
+<p class='item-img' data-src='/2023/07/05/Lab2_Report/image/image-17.png'><img src="/2023/07/05/Lab2_Report/image/image-17.png" alt="Table 8.6"></p>
+<blockquote>
+<p>Q6:What is the name of the binary that was running when the kernel paniced? What is its process id (pid)? </p>
+</blockquote>
+<p>首先重启<code>qemu</code>和<code>gdb</code>执行如下命令:</p>
+<p class='item-img' data-src='/2023/07/05/Lab2_Report/image/image-18.png'><img src="/2023/07/05/Lab2_Report/image/image-18.png" alt="name"></p>
+<p>为了获得进程<code>pid</code>,执行如下命令：</p>
+<p class='item-img' data-src='/2023/07/05/Lab2_Report/image/image-20.png'><img src="/2023/07/05/Lab2_Report/image/image-20.png" alt="pid"></p>
+<p>因此</p>
+<p><code>name = initcode\000\000\000\000\000\000\000</code>;</p>
+<p><code>pid = 1</code>.</p>
+<h2 id="System-call-tracing"><a href="#System-call-tracing" class="headerlink" title="System call tracing"></a>System call tracing</h2><h3 id="主要思路"><a href="#主要思路" class="headerlink" title="主要思路"></a>主要思路</h3><ul>
+<li>根据题中所给的Hints来修改程序<ul>
+<li><code>Makefile</code>:Add <code>$U/_trace</code> to <code>UPROGS</code>.</li>
+<li><code>user/user.h</code>: 增加<code>trace</code>函数的声明，如下：<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">int</span> <span class="hljs-title function_">trace</span><span class="hljs-params">(<span class="hljs-type">int</span>)</span>;<br></code></pre></td></tr></table></figure></li>
+<li><code>user/usys.pl</code>:增加如下代码：<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">entry(<span class="hljs-string">"trace"</span>);<br></code></pre></td></tr></table></figure></li>
+<li><code>kernel/proc.h</code>:在<code>struct proc</code>中添加成员变量<code>mask</code>,用于存储<code>trace</code>函数的参数<code>1 &lt;&lt; SYS_call</code>:<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">proc</span>{</span><br>  uint64 mask;<br>  ...<br>};<br></code></pre></td></tr></table></figure></li>
+<li><code>kernel/sysproc.c</code>:增加函数<code>sys_trace</code>如下：<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs c">uint64<br><span class="hljs-title function_">sys_trace</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span><br>{<br>  <span class="hljs-type">int</span> mask;<br>  argint(<span class="hljs-number">0</span>, &amp;mask); <span class="hljs-comment">// 从系统调用中获得参数mask</span><br><br>  <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">proc</span>* <span class="hljs-title">p</span> =</span> myproc();<br>  p-&gt;mask = mask; <span class="hljs-comment">// 将当前进程的mask值设为获取的参数</span><br><br>  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>}<br></code></pre></td></tr></table></figure>
+用于在调用<code>trace</code>时来接收参数<code>mask</code>.</li>
+<li><code>kernel/proc.c</code>:在<code>fork</code>函数中增加如下代码：<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs c">fork(<span class="hljs-type">void</span>){<br>  ...<br>  np-&gt;sz = p-&gt;sz;<br><br>  <span class="hljs-comment">// 复制trace mask值到子进程</span><br>  np-&gt;mask = p-&gt;mask;<br><br>  <span class="hljs-comment">// copy saved user registers.</span><br>  *(np-&gt;trapframe) = *(p-&gt;trapframe);<br>  ...<br>}<br></code></pre></td></tr></table></figure>
+上述代码实现将掩码<code>mask</code>从父进程传到子进程.</li>
+<li><code>kernel/syscall.h</code>:增加系统调用号<code>SYS_trace</code>:<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">define</span> SYS_trace 22</span><br></code></pre></td></tr></table></figure></li>
+<li><code>kernel/syscall.c</code>:<ul>
+<li>增加函数声明：<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-keyword">extern</span> uint64 <span class="hljs-title function_">sys_trace</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span>;<br></code></pre></td></tr></table></figure></li>
+<li>增加<code>syscalls</code>的取值：<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">static</span> <span class="hljs-title function_">uint64</span> <span class="hljs-params">(*syscalls[])</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span> = {<br>...<br>[SYS_close]   sys_close,<br>[SYS_trace]   sys_trace,<br>};<br></code></pre></td></tr></table></figure></li>
+<li>增加系统调用名的字符串数组：<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">// 用来在打印trace函数运行结果时输出系统调用名称</span><br><span class="hljs-type">static</span> <span class="hljs-type">char</span>* syscall_names[] = {<br>  <span class="hljs-string">""</span>,<br>  <span class="hljs-string">"syscall fork"</span>,<br>  <span class="hljs-string">"syscall exit"</span>,<br>  <span class="hljs-string">"syscall wait"</span>,<br>  <span class="hljs-string">"syscall pipe"</span>,<br>  <span class="hljs-string">"syscall read"</span>,<br>  <span class="hljs-string">"syscall kill"</span>,<br>  <span class="hljs-string">"syscall exec"</span>,<br>  <span class="hljs-string">"syscall fstat"</span>,<br>  <span class="hljs-string">"syscall chdir"</span>,<br>  <span class="hljs-string">"syscall dup"</span>,<br>  <span class="hljs-string">"syscall getpid"</span>,<br>  <span class="hljs-string">"syscall sbrk"</span>,<br>  <span class="hljs-string">"syscall sleep"</span>,<br>  <span class="hljs-string">"syscall uptime"</span>,<br>  <span class="hljs-string">"syscall open"</span>,<br>  <span class="hljs-string">"syscall write"</span>,<br>  <span class="hljs-string">"syscall mknod"</span>,<br>  <span class="hljs-string">"syscall unlink"</span>,<br>  <span class="hljs-string">"syscall link"</span>,<br>  <span class="hljs-string">"syscall mkdir"</span>,<br>  <span class="hljs-string">"syscall close"</span>,<br>  <span class="hljs-string">"syscall trace"</span>,<br>};<br></code></pre></td></tr></table></figure></li>
+<li>修改<code>syscall</code>函数：<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">void</span><br><span class="hljs-title function_">syscall</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span><br>{<br>  ...<br>  <span class="hljs-keyword">if</span>(num &gt; <span class="hljs-number">0</span> &amp;&amp; num &lt; NELEM(syscalls) &amp;&amp; syscalls[num]) {<br>    <span class="hljs-comment">// Use num to lookup the system call function for num, call it,</span><br>    <span class="hljs-comment">// and store its return value in p-&gt;trapframe-&gt;a0</span><br>    p-&gt;trapframe-&gt;a0 = syscalls[num]();<br><br>    <span class="hljs-keyword">if</span>((p-&gt;mask &gt;&gt; num) &amp; <span class="hljs-number">0b1</span>){ <span class="hljs-comment">// 如果mask的值译码后等于该系统调用的系统调用号，则打印相关信息</span><br>      <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d: %s -&gt; %d\n"</span>, p-&gt;pid, syscall_names[num], p-&gt;trapframe-&gt;a0);<br>    }<br>  } <span class="hljs-keyword">else</span> {<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d %s: unknown sys call %d\n"</span>,<br>      p-&gt;pid, p-&gt;name, num);<br>    p-&gt;trapframe-&gt;a0 = <span class="hljs-number">-1</span>;<br>  }<br>}<br></code></pre></td></tr></table></figure>
+上述改动中内层条件判断的语句就是将<code>mask</code>进行解码，然后与1作比较，若相等则输出该系统调用.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>经过以上对内核的修改，成功实现了系统调用<code>trace</code>.</p>
+<h2 id="sysinfo"><a href="#sysinfo" class="headerlink" title="sysinfo"></a>sysinfo</h2><h3 id="主要思路-1"><a href="#主要思路-1" class="headerlink" title="主要思路"></a>主要思路</h3><ul>
+<li>和上个实验一样按照<code>Hints</code>来逐步完成，本实验的主要目的是完成系统调用<code>sysinfo</code>来统计系统非空闲进程数量和空闲空间字节数.<ul>
+<li>首先是将系统调用添加到内核中,参考<code>System call tracing</code>,进行如下操作：<ul>
+<li>Add <code>$U/_sysinfotest</code> to <code>UPROGS</code> in <code>Makefile</code></li>
+<li>在<code>user/user.h</code>中进行系统调用函数的声明：<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">sysinfo</span>;</span><br>...<br><span class="hljs-type">int</span> <span class="hljs-title function_">sysinfo</span><span class="hljs-params">(<span class="hljs-keyword">struct</span> sysinfo *)</span>;<br>...<br></code></pre></td></tr></table></figure></li>
+<li>在<code>user/usys.pl</code>中添加如下代码：<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c">...<br>entry(<span class="hljs-string">"trace"</span>);<br>entry(<span class="hljs-string">"sysinfo"</span>);<br></code></pre></td></tr></table></figure></li>
+<li>在<code>kernel/syscall.h</code>中添加系统调用号：<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">define</span> SYS_sysinfo 23</span><br></code></pre></td></tr></table></figure></li>
+<li>在<code>kernel/syscall.c</code>中添加如下改动：<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs c">...<br><span class="hljs-keyword">extern</span> uint64 <span class="hljs-title function_">sys_info</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span>;<br><br><span class="hljs-comment">// An array mapping syscall numbers from syscall.h</span><br><span class="hljs-comment">// to the function that handles the system call.</span><br><span class="hljs-type">static</span> <span class="hljs-title function_">uint64</span> <span class="hljs-params">(*syscalls[])</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span> = {<br>...<br>[SYS_sysinfo]    sys_info,<br>};<br><br><span class="hljs-comment">// 用来在打印trace函数运行结果时输出系统调用名称</span><br><span class="hljs-type">static</span> <span class="hljs-type">char</span>* syscall_names[] = {<br>  ...<br>  <span class="hljs-string">"syscall sysinfo"</span><br>};<br>...<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>接着就是实现该系统调用，该系统调用的功能是统计空闲内存和非空闲进程<ul>
+<li>统计空闲内存：在<code>kernel/kalloc.c</code>中添加如下函数<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">// 用于统计空闲空间的大小，free_num计算得到的是页数，每页的大小为 4096 bytes</span><br>uint64<br><span class="hljs-title function_">free_mem_num</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span><br>{<br>  <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">run</span> *<span class="hljs-title">page</span>;</span><br>  uint64 free_num = <span class="hljs-number">0</span>;<br>  acquire(&amp;kmem.lock);  <span class="hljs-comment">// 访问上锁</span><br>  page = kmem.freelist; <span class="hljs-comment">// 空闲页面的链表头</span><br>  <span class="hljs-keyword">while</span> (page) {<br>    free_num++;<br>    page = page-&gt;next;<br>  }<br>  release(&amp;kmem.lock);  <span class="hljs-comment">// 访问结束解锁        </span><br>  <span class="hljs-keyword">return</span> free_num * <span class="hljs-number">4096</span>;<br>}<br></code></pre></td></tr></table></figure></li>
+<li>统计非空闲进程：在<code>kernel/proc.c</code>中添加如下函数<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">// 用于统计当前非空闲进程数量</span><br>uint64<br><span class="hljs-title function_">proc_used_num</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span><br>{<br>  uint64 nproc = <span class="hljs-number">0</span>;  <span class="hljs-comment">// 计数</span><br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">struct</span> proc *p = proc; p &lt; &amp;proc[NPROC]; p++) {<br>    <span class="hljs-keyword">if</span> (p-&gt;state != UNUSED)<br>      nproc++;<br>  }<br>  <span class="hljs-keyword">return</span> nproc;<br>}<br></code></pre></td></tr></table></figure></li>
+<li>在实现上述函数后要将二者的声明加入到<code>kernel/defs.h</code>中.</li>
+<li>在<code>kernel/sysproc.c</code>中实现系统调用<code>uint64 sys_info(void)</code>:<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs c">uint64<br><span class="hljs-title function_">sys_info</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span><br>{<br>  <span class="hljs-comment">// 用户空间指向sysinfo的指针</span><br>  uint64 u_addr;<br>  argaddr(<span class="hljs-number">0</span>, &amp;u_addr);<br><br>  <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">sysinfo</span> <span class="hljs-title">info</span>;</span><br>  info.freemem = free_mem_num(); <span class="hljs-comment">// 获取空闲内存</span><br>  info.nproc = proc_used_num();  <span class="hljs-comment">// 获取非空闲进程</span><br><br>  <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">proc</span> *<span class="hljs-title">p</span> =</span> myproc();<br>  <span class="hljs-comment">// 根据Hints参考kernel/file.c/filestate()使用copy函数将info复制到用户空间</span><br>  <span class="hljs-keyword">if</span>(copyout(p-&gt;pagetable, u_addr, (<span class="hljs-type">char</span>*)(&amp;info), <span class="hljs-keyword">sizeof</span>(info)) &lt; <span class="hljs-number">0</span>)<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;<br><br>  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>}<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.chens.life/posts/mit-xv6-lab2/">xv6-labs-2022 Lab2 system call 详解</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/407169754#Sysinfo">MIT6.s081-2020 操作系统入门 Lab2 System Calls</a></li>
+<li class='item-img' data-src='/2023/07/05/Lab2_Report/image/image-21.png'><img src="/2023/07/05/Lab2_Report/image/image-21.png" alt="Alt text"></li>
+</ul>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2023/07/05/Lab3_Report/">← Next xv6-Lab3</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2023/07/05/Lab1_Report/">xv6-Lab1 Prev →</a></div></div></div></div><div class="bottom-btn"><div><a id="to-top" onClick="scrolls.scrolltop();" title="To Top" style="opacity: 0; display: none;">∧</a><a id="to-index" href="#toc-div" title="To Catalog">≡</a><a id="color-mode" onClick="colorMode.change()" title="Change Theme"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">Jiuer Ma</a></h1><div id="description"><p></p></div><div id="social-links"><a class="social" target="_blank" rel="noopener" href="https://github.com/ma-b21"><i class="fab fa-github" alt="GitHub"></i></a><a class="social" href="mailto:mb_thu@163.com"><i class="fa fa-envelope" alt="E-Mail"></i></a></div></div><div id="aside-block"><div id="toc-div"><h1>Catalog</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Lab-2"><span class="toc-number">1.</span> <span class="toc-text">Lab 2</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#using-gdb"><span class="toc-number">1.1.</span> <span class="toc-text">using gdb</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#System-call-tracing"><span class="toc-number">1.2.</span> <span class="toc-text">System call tracing</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E6%80%9D%E8%B7%AF"><span class="toc-number">1.2.1.</span> <span class="toc-text">主要思路</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sysinfo"><span class="toc-number">1.3.</span> <span class="toc-text">sysinfo</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E6%80%9D%E8%B7%AF-1"><span class="toc-number">1.3.1.</span> <span class="toc-text">主要思路</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="toc-number">1.4.</span> <span class="toc-text">参考链接</span></a></li></ol></li></ol></div></div><footer><nobr>Published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr>by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas><script src="/js/search.js"></script><script src="/js/arknights.js"></script><script src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script src="/js/pjax.js"></script><script class="pjax-js">reset= () => {code.findCode();
+document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script></body></html>

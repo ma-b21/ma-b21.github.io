@@ -1,0 +1,205 @@
+<!DOCTYPE html><html lang="en-us" theme-mode="auto"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>xv6-Lab3 | J's Blog</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"Enter here","blurHolder":"Search","noResult":"Data \"$0\" not found"},"code":{"codeInfo":"$0 - $1 lines","copy":"copy","copyFinish":"copied","expand":"expand"}}</script><script src="//unpkg.com/mermaid@9.2.2/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/brands.min.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/fontawesome.min.css"><link rel="stylesheet" href="/css/arknights.css"><script>if (window.localStorage.getItem('theme-mode') === 'light' || window.matchMedia('(prefers-color-scheme:light)').matches) document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark' || window.matchMedia('(prefers-color-scheme:dark)').matches) document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.ttf");
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+@font-face {
+ font-family: 'Font Awesome 6 Brands';
+ src: local('Font Awesome 6 Brands'), url('/lib/fontawesome/fa-brands.woff2') format('woff2');
+}
+@font-face {
+ font-family: 'Font Awesome 6 Free';
+ src: local('Font Awesome 6 Free'), url('/lib/fontawesome/fa-regular.woff2') format('woff2');
+}</style><style>:root {
+  --dark-background: url('https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg');
+  --light-background: url('/img/bk.jpg');
+}</style><meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style><link rel="alternate" href="/atom.xml" title="J's Blog" type="application/atom+xml">
+</head><body><div class="loading" style="opacity: 0"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><nav><div class="navBtn hide"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>xv6-Lab3</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2023-07-05T12:21:44.284Z" id="date"> 2023-07-05</time></div></span><br><span>Last Update: <div class="control"><time datetime="2023-07-05T12:30:01.627Z" id="updated"> 2023-07-05</time></div></span><br><span>Word Count: <div class="control">1.8k</div></span><br><span>Read Time: <div class="control">8 min</div></span></div></div><hr><div id="post-content"><h1 id="Lab3-page-tables"><a href="#Lab3-page-tables" class="headerlink" title="Lab3 page tables"></a>Lab3 page tables</h1><h2 id="Speed-up-system-calls"><a href="#Speed-up-system-calls" class="headerlink" title="Speed up system calls"></a>Speed up system calls</h2><h3 id="主要思路"><a href="#主要思路" class="headerlink" title="主要思路"></a>主要思路</h3><p>根据题中所给的<code>Hints</code>以及参考书的<code>Chapter 3</code>,要实现对<code>getpid()</code>的加速，就是将进程的<code>pid</code>信息存放在内核和用户共用的一片存储空间中，从而在<code>ugetpid()</code>的时候程序不用陷入内核态，实现对<code>getpid()</code>的加速。<br>实现流程如下：</p>
+<ul>
+<li>首先在<code>kernel/proc.h</code>中添加如下代码来作为上述共享空间：<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">usyscall</span> *<span class="hljs-title">usyspage</span>;</span>   <span class="hljs-comment">// 用户与内核共享页</span><br></code></pre></td></tr></table></figure></li>
+<li>接着在<code>kernel/proc.c</code>中添加如下代码来为这个页面分配空间并将目标值装入页面：<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">static</span> <span class="hljs-keyword">struct</span> proc*<br><span class="hljs-title function_">allocproc</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span><br>{<br>  ...<br>  <span class="hljs-comment">// Allocate a trapframe page.</span><br>  <span class="hljs-keyword">if</span>((p-&gt;trapframe = (<span class="hljs-keyword">struct</span> trapframe *)kalloc()) == <span class="hljs-number">0</span>){<br>    freeproc(p);<br>    release(&amp;p-&gt;lock);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>  }<br><br>  <span class="hljs-comment">// 给共享页分配空间(add)</span><br>  <span class="hljs-keyword">if</span>((p-&gt;usyspage = (<span class="hljs-keyword">struct</span> usyscall *)kalloc()) == <span class="hljs-number">0</span>){<br>    freeproc(p);<br>    release(&amp;p-&gt;lock);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>  }<br>  p-&gt;usyspage-&gt;pid = p-&gt;pid;<br><br>  ...<br><br>  <span class="hljs-keyword">return</span> p;<br>}<br></code></pre></td></tr></table></figure></li>
+<li>在销毁进程时要记得将页面空间释放并避免野指针(<code>kernel/proc.c</code>)：<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">static</span> <span class="hljs-type">void</span><br><span class="hljs-title function_">freeproc</span><span class="hljs-params">(<span class="hljs-keyword">struct</span> proc *p)</span><br>{<br> ...<br><br>  <span class="hljs-keyword">if</span>(p-&gt;usyspage)<br>    kfree((<span class="hljs-type">void</span>*)p-&gt;usyspage);<br>  p-&gt;usyspage = <span class="hljs-number">0</span>;<br><br>  ...<br>}<br></code></pre></td></tr></table></figure></li>
+<li>在页表中建立映射(<code>kernel/proc.c</code>),注意题中要求，该页的权限为用户只读:<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">// Create a user page table for a given process, with no user memory,</span><br><span class="hljs-comment">// but with trampoline and trapframe pages.</span><br><span class="hljs-type">pagetable_t</span><br><span class="hljs-title function_">proc_pagetable</span><span class="hljs-params">(<span class="hljs-keyword">struct</span> proc *p)</span><br>{<br>  ...<br><br>  <span class="hljs-comment">// 建立从USYSCALL到p-&gt;usyspage的映射，权限为用户只读</span><br>  <span class="hljs-keyword">if</span>(mappages(pagetable, USYSCALL, PGSIZE,<br>              (uint64)(p-&gt;usyspage), PTE_R | PTE_U) &lt; <span class="hljs-number">0</span>){<br>    uvmfree(pagetable, <span class="hljs-number">0</span>);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>  }<br><br>  <span class="hljs-comment">// map the trampoline code (for system call return)</span><br>  <span class="hljs-comment">// at the highest user virtual address.</span><br>  <span class="hljs-comment">// only the supervisor uses it, on the way</span><br>  <span class="hljs-comment">// to/from user space, so not PTE_U.</span><br>  ...<br>}<br></code></pre></td></tr></table></figure></li>
+<li>同样在进程结束释放页表的时候要记得取消映射(<code>kernel/proc.c</code>)：<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">// Free a process's page table, and free the</span><br><span class="hljs-comment">// physical memory it refers to.</span><br><span class="hljs-type">void</span><br><span class="hljs-title function_">proc_freepagetable</span><span class="hljs-params">(<span class="hljs-type">pagetable_t</span> pagetable, uint64 sz)</span><br>{<br>  ...<br><br>  uvmunmap(pagetable, USYSCALL, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>);<br>  uvmfree(pagetable, sz);<br>}<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>Q:Which other xv6 system call(s) could be made faster using this shared page? Explain how.</p>
+</blockquote>
+</li>
+</ul>
+<p>系统调用<code>sys_sbrk</code>也可以用此页来加速，因为该函数返回的是<code>myproc()-&gt;sz</code>,因此我们可以将<code>myproc()-&gt;sz</code>也在进程初始化的时候存在该页中，就像存进程的<code>pid</code>一样，用同样的原理可以加速此系统调用。</p>
+<h2 id="Print-a-page-table"><a href="#Print-a-page-table" class="headerlink" title="Print a page table"></a>Print a page table</h2><h3 id="主要思路-1"><a href="#主要思路-1" class="headerlink" title="主要思路"></a>主要思路</h3><p>根据<code>Hints</code>来写，首先要输出所有页表项我们需要对三层页表进行遍历，页表是树状结构，遍历的历程参考<code>Hints</code>给出的<code>freewalk()</code>函数。</p>
+<ul>
+<li>在<code>kernel/defs.h</code>中定义<code>vmprint</code>函数：<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">void</span>            <span class="hljs-title function_">vmprint</span><span class="hljs-params">(<span class="hljs-type">pagetable_t</span>)</span>;<br></code></pre></td></tr></table></figure></li>
+<li>在<code>kernel/exec.c</code>中添加题目要求的代码：<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs c">...<br><span class="hljs-keyword">if</span>(p-&gt;pid==<span class="hljs-number">1</span>) vmprint(p-&gt;pagetable);<br><span class="hljs-keyword">return</span> argc; <span class="hljs-comment">// this ends up in a0, the first argument to main(argc, argv)</span><br>...<br></code></pre></td></tr></table></figure></li>
+<li>接着在<code>kernel/vm.c</code>中实现<code>vmprint</code>函数(仿照<code>freewalk</code>函数)：<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">static</span> uint64 depth = <span class="hljs-number">0</span>; <span class="hljs-comment">// 来记录递归搜索深度</span><br><span class="hljs-type">void</span><br><span class="hljs-title function_">vmprint</span><span class="hljs-params">(<span class="hljs-type">pagetable_t</span> page)</span><br>{<br>  <span class="hljs-keyword">if</span>(depth == <span class="hljs-number">0</span>)           <span class="hljs-comment">// 根地址打印</span><br>  {<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"page table %p\n"</span>, page);<br>  }<br>  <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">512</span>; ++i)  <span class="hljs-comment">// 遍历页面上的页表项</span><br>  {<br>    <span class="hljs-type">pte_t</span> pte = page[i];   <br>    <span class="hljs-keyword">if</span>(pte &amp; PTE_V)        <span class="hljs-comment">// 页表项有效</span><br>    {<br>      <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt;= depth; ++j)<br>      { <br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">" .."</span>);<br>      }<br>      <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d: pte %p pa %p\n"</span>, i, (uint64)pte, (uint64)PTE2PA(pte));  <span class="hljs-comment">// 分别打印虚拟地址和物理地址</span><br><br>      <span class="hljs-keyword">if</span>(depth &lt; <span class="hljs-number">2</span>) <span class="hljs-comment">// 一级或二级页表递归搜索子页表项</span><br>      {<br>        depth ++;<br>        vmprint((<span class="hljs-type">pagetable_t</span>)PTE2PA(pte));<br>        depth --;<br>      }<br>    } <br>  }<br>}<br></code></pre></td></tr></table></figure></li>
+</ul>
+<blockquote>
+<p>Q:Explain the output of vmprint in terms of Fig 3-4 from the text. What does page 0 contain? What is in page 2? When running in user mode, could the process read/write the memory mapped by page 1? What does the third to last page contain? </p>
+</blockquote>
+<p><code>Figure 3.4</code>如下：</p>
+<p class='item-img' data-src='/2023/07/05/Lab3_Report/image/image.png'><img src="/2023/07/05/Lab3_Report/image/image.png" alt="Figure 3.4"></p>
+<p>对于三层页表的存储内容，我们需要对<code>exec</code>函数进行分析，因为页表在这里被创建。<br>首先我们可以看到<code>exec</code>函数中与内存操作相关的第一处是如下代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">// Load program into memory.</span><br><span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>, off=elf.phoff; i&lt;elf.phnum; i++, off+=<span class="hljs-keyword">sizeof</span>(ph)){<br>  <span class="hljs-keyword">if</span>(readi(ip, <span class="hljs-number">0</span>, (uint64)&amp;ph, off, <span class="hljs-keyword">sizeof</span>(ph)) != <span class="hljs-keyword">sizeof</span>(ph))<br>    <span class="hljs-keyword">goto</span> bad;<br>  <span class="hljs-keyword">if</span>(ph.type != ELF_PROG_LOAD)<br>    <span class="hljs-keyword">continue</span>;<br>  <span class="hljs-keyword">if</span>(ph.memsz &lt; ph.filesz)<br>    <span class="hljs-keyword">goto</span> bad;<br>  <span class="hljs-keyword">if</span>(ph.vaddr + ph.memsz &lt; ph.vaddr)<br>    <span class="hljs-keyword">goto</span> bad;<br>  <span class="hljs-keyword">if</span>(ph.vaddr % PGSIZE != <span class="hljs-number">0</span>)<br>    <span class="hljs-keyword">goto</span> bad;<br>  uint64 sz1;<br>  <span class="hljs-keyword">if</span>((sz1 = uvmalloc(pagetable, sz, ph.vaddr + ph.memsz, flags2perm(ph.flags))) == <span class="hljs-number">0</span>)<br>    <span class="hljs-keyword">goto</span> bad;<br>  sz = sz1;<br>  <span class="hljs-keyword">if</span>(loadseg(pagetable, ph.vaddr, ip, ph.off, ph.filesz) &lt; <span class="hljs-number">0</span>)<br>    <span class="hljs-keyword">goto</span> bad;<br>}<br></code></pre></td></tr></table></figure>
+<p>由此<code>page 0</code>所存储的应该是这些数据，如代码段，数据段等.</p>
+<p>接着涉及内存操作的代码如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">// Allocate two pages at the next page boundary.</span><br><span class="hljs-comment">// Make the first inaccessible as a stack guard.</span><br><span class="hljs-comment">// Use the second as the user stack.</span><br>sz = PGROUNDUP(sz);<br>uint64 sz1;<br><span class="hljs-keyword">if</span>((sz1 = uvmalloc(pagetable, sz, sz + <span class="hljs-number">2</span>*PGSIZE, PTE_W)) == <span class="hljs-number">0</span>)<br>  <span class="hljs-keyword">goto</span> bad;<br>sz = sz1;<br>uvmclear(pagetable, sz<span class="hljs-number">-2</span>*PGSIZE);<br>sp = sz;<br>stackbase = sp - PGSIZE;<br></code></pre></td></tr></table></figure>
+<p>这段代码申请了两页的空间，其中第一页<code>page 1</code>作为<code>Figure 3.4</code>中<code>guard page</code>段,第二页作为<code>Figure 3.4</code>中<code>stack</code>段。</p>
+<p>由函数<code>uvmclear</code>的定义，<code>page 1</code>的<code>PTE_U</code>位被置为0,因此用户程序无法访问<code>page 1</code>。</p>
+<p>由<code>Figure 3.4</code>，第三页到最后一页包括了<code>heap</code>,<code>unused</code>,<code>trapframe</code>,<code>trampoline</code>.</p>
+<h2 id="Detect-which-pages-have-been-accessed"><a href="#Detect-which-pages-have-been-accessed" class="headerlink" title="Detect which pages have been accessed"></a>Detect which pages have been accessed</h2><h3 id="主要思路-2"><a href="#主要思路-2" class="headerlink" title="主要思路"></a>主要思路</h3><p>本题要求我们对给定的有限个数的页面，程序可以检查这些页面是否被访问过，并且将结果编成<code>bitmask</code>输出到用户空间的指定地址。</p>
+<p>首先需要确定怎么去查询一个页面是否被访问：参考<a target="_blank" rel="noopener" href="https://github.com/riscv/riscv-isa-manual/releases/download/Priv-v1.12/riscv-privileged-20211203.pdf">RISC-V privileged instructions</a>中的<code>Figure 4.18</code>：</p>
+<p class='item-img' data-src='/2023/07/05/Lab3_Report/image/image-1.png'><img src="/2023/07/05/Lab3_Report/image/image-1.png" alt="Figure 4.18"></p>
+<p>以及<code>page 81</code>的如下描述：</p>
+<blockquote>
+<p>Each leaf PTE contains an accessed (A)and dirty (D) bit.The A bit indicates the virtual page has<br>been read,written,or fetched from since the last time the A bit was cleared.The D bit indicates<br>the virtual page has been written since the last time the D bit was cleared.</p>
+</blockquote>
+<p>我们知道可以用<code>PTE_A</code>作为页面是否被访问的标志，它的值是<code>PTE</code>的第六位(从零开始)，因此我们在<code>kernel/riscv.h</code>中添加如下代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">define</span> PTE_A (1L &lt;&lt; 6)</span><br></code></pre></td></tr></table></figure>
+<p>若<code>PTE &amp; PTE_A == 1</code>,则说明此页面在检查前被访问过。</p>
+<p>如何去得到一页中的<code>PTE</code>呢？根据<code>Hints</code>,我们可以用<code>walk</code>函数，它可以找到一个虚拟地址对应的<code>PTE</code>，返回其<code>physical address</code>。</p>
+<p>再根据<code>Hints</code>的第8条，我们需要在检查完毕后将<code>PTE_A</code>位置零，因为检查本身相当于一次访问，若不置零则<code>PTE_A</code>位必然是1，下一次进行检查时就可能出现页面并未被访问但是PTE_A位为1的情况。这要求我们在检查完一个页面后就将<code>PTE</code>的第六位置零，参考<a target="_blank" rel="noopener" href="https://www.chens.life/posts/how-to-set-a-specified-bit-of-a-binary-value-to-a-specified-value/">如何将一个二进制值的指定位设置为指定的值</a>,将二进制数<code>x</code>的第<code>n</code>位设置为<code>a</code>的公式为<code>x = ((x&amp;(1 &lt;&lt; n)) ^ x) ^ (a &lt;&lt; n)</code>。</p>
+<p>在遍历的过程中如何设置<code>bitmask</code>呢？我采用如下代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-keyword">if</span>(PTE_FLAGS(*pte) &amp; PTE_A)  <span class="hljs-comment">// 访问位为1，代表被访问过</span><br>{<br>  maskbits |= (<span class="hljs-number">1L</span> &lt;&lt; i);<br>}<br></code></pre></td></tr></table></figure>
+<p>这样<code>maskbits</code>的第<code>i</code>位为1则表示第<code>i</code>页被访问过。</p>
+<p>综合以上分析以及<code>Hints</code>中所给的其他的提示，最终补全<code>sys_pgaccess</code>代码如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">int</span><br><span class="hljs-title function_">sys_pgaccess</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span><br>{<br>  <span class="hljs-comment">// lab pgtbl: your code here.</span><br>  uint64 base;        <span class="hljs-comment">// 待检查页面起始地址</span><br>  <span class="hljs-type">int</span> pagenum;        <span class="hljs-comment">// 待检查页面数</span><br>  uint64 usraddr;     <span class="hljs-comment">// 等待输出结果的用户空间地址</span><br><br>  <span class="hljs-comment">// 获取参数</span><br>  argaddr(<span class="hljs-number">0</span>, &amp;base);<br>  argint(<span class="hljs-number">1</span>, &amp;pagenum);<br>  argaddr(<span class="hljs-number">2</span>, &amp;usraddr);<br><br>  <span class="hljs-comment">// bitmask</span><br>  uint64 maskbits = <span class="hljs-number">0</span>;<br>  <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">proc</span>* <span class="hljs-title">p</span> =</span> myproc();<br><br>  <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; pagenum; ++i)<br>  {<br>    <span class="hljs-type">pte_t</span>* pte = walk(p-&gt;pagetable, base + i * PGSIZE, <span class="hljs-number">0</span>);  <span class="hljs-comment">// 获取第i页的第0个页表项映射的物理地址</span><br>    <span class="hljs-keyword">if</span>(pte == <span class="hljs-number">0</span>)  panic(<span class="hljs-string">"page not exist!"</span>);<br>    <span class="hljs-keyword">if</span>(PTE_FLAGS(*pte) &amp; PTE_A)  <span class="hljs-comment">// 访问位为1，代表被访问过</span><br>    {<br>      maskbits |= (<span class="hljs-number">1L</span> &lt;&lt; i);<br>    }<br>    *pte = ((*pte &amp; PTE_A) ^ *pte) ^ <span class="hljs-number">0</span>;  <span class="hljs-comment">// 将PTE_A置零</span><br>  }<br>  <br>  <span class="hljs-keyword">if</span> (copyout(p-&gt;pagetable, usraddr, (<span class="hljs-type">char</span> *)&amp;maskbits, <span class="hljs-keyword">sizeof</span>(maskbits)) &lt; <span class="hljs-number">0</span>) <span class="hljs-comment">// 将bitmask的结果输出到用户空间</span><br>    panic(<span class="hljs-string">"sys_pgacess copyout error"</span>);<br>  <br>  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>}<br></code></pre></td></tr></table></figure>
+
+<h2 id="Lab3参考链接"><a href="#Lab3参考链接" class="headerlink" title="Lab3参考链接"></a>Lab3参考链接</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/347172409">MIT 6.S081 2020 LAB3记录</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/ahundredmile/article/details/125531126">6.S081 Lab3 page tables</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.chens.life/posts/mit-xv6-lab3/">xv6-labs-2022 Lab3 page tables 详解</a></li>
+</ul>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages" style="justify-content: flex-end"><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2023/07/05/Lab2_Report/">xv6-Lab2 Prev →</a></div></div></div></div><div class="bottom-btn"><div><a id="to-top" onClick="scrolls.scrolltop();" title="To Top" style="opacity: 0; display: none;">∧</a><a id="to-index" href="#toc-div" title="To Catalog">≡</a><a id="color-mode" onClick="colorMode.change()" title="Change Theme"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">Jiuer Ma</a></h1><div id="description"><p></p></div><div id="social-links"><a class="social" target="_blank" rel="noopener" href="https://github.com/ma-b21"><i class="fab fa-github" alt="GitHub"></i></a><a class="social" href="mailto:mb_thu@163.com"><i class="fa fa-envelope" alt="E-Mail"></i></a></div></div><div id="aside-block"><div id="toc-div"><h1>Catalog</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Lab3-page-tables"><span class="toc-number">1.</span> <span class="toc-text">Lab3 page tables</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Speed-up-system-calls"><span class="toc-number">1.1.</span> <span class="toc-text">Speed up system calls</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E6%80%9D%E8%B7%AF"><span class="toc-number">1.1.1.</span> <span class="toc-text">主要思路</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Print-a-page-table"><span class="toc-number">1.2.</span> <span class="toc-text">Print a page table</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E6%80%9D%E8%B7%AF-1"><span class="toc-number">1.2.1.</span> <span class="toc-text">主要思路</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Detect-which-pages-have-been-accessed"><span class="toc-number">1.3.</span> <span class="toc-text">Detect which pages have been accessed</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E6%80%9D%E8%B7%AF-2"><span class="toc-number">1.3.1.</span> <span class="toc-text">主要思路</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lab3%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="toc-number">1.4.</span> <span class="toc-text">Lab3参考链接</span></a></li></ol></li></ol></div></div><footer><nobr>Published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr>by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas><script src="/js/search.js"></script><script src="/js/arknights.js"></script><script src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script src="/js/pjax.js"></script><script class="pjax-js">reset= () => {code.findCode();
+document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script></body></html>
