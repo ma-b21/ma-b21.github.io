@@ -1,0 +1,236 @@
+<!DOCTYPE html><html lang="en-us" theme-mode="auto"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>RadASM+Masm汇编开发环境配置指北 | J's Blog</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"Enter here","blurHolder":"Search","noResult":"Data \"$0\" not found"},"code":{"codeInfo":"$0 - $1 lines","copy":"copy","copyFinish":"copied","expand":"expand"}}</script><script src="//unpkg.com/mermaid@9.2.2/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/brands.min.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/fontawesome.min.css"><link rel="stylesheet" href="/css/arknights.css"><script>if (window.localStorage.getItem('theme-mode') === 'light' || window.matchMedia('(prefers-color-scheme:light)').matches) document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark' || window.matchMedia('(prefers-color-scheme:dark)').matches) document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.ttf");
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+@font-face {
+ font-family: 'Font Awesome 6 Brands';
+ src: local('Font Awesome 6 Brands'), url('/lib/fontawesome/fa-brands.woff2') format('woff2');
+}
+@font-face {
+ font-family: 'Font Awesome 6 Free';
+ src: local('Font Awesome 6 Free'), url('/lib/fontawesome/fa-regular.woff2') format('woff2');
+}</style><style>:root {
+  --dark-background: url('https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg');
+  --light-background: url('/img/bk.jpg');
+}</style><meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style><link rel="alternate" href="/atom.xml" title="J's Blog" type="application/atom+xml">
+</head><body><div class="loading" style="opacity: 0"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><nav><div class="navBtn hide"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>RadASM+Masm汇编开发环境配置指北</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2023-09-22T03:18:30.372Z" id="date"> 2023-09-22</time></div></span><br><span>Last Update: <div class="control"><time datetime="2023-09-22T03:26:56.790Z" id="updated"> 2023-09-22</time></div></span><br><span>Word Count: <div class="control">1.7k</div></span><br><span>Read Time: <div class="control">6 min</div></span></div></div><hr><div id="post-content"><h1 id="RadASM-Masm汇编开发环境配置指北"><a href="#RadASM-Masm汇编开发环境配置指北" class="headerlink" title="RadASM+Masm汇编开发环境配置指北"></a>RadASM+Masm汇编开发环境配置指北</h1><p> MA PU            2023.9.22</p>
+<hr>
+<h2 id="文件下载"><a href="#文件下载" class="headerlink" title="文件下载"></a>文件下载</h2><p><a href="RadASM-2.2.2.4-FullPackage.zip" title="下载">RadASM v2.2.2.4</a></p>
+<p><a href="odbg201.zip" title="下载">OllyDbg v2.0.1</a>(汉化版本)</p>
+<p><a href="RadASM.zip" title="下载">RadASM v3.0</a>(存在程序崩溃卡死现象，虽然后续有配置教程，但不推荐，与v2.2.2.4二选一即可)</p>
+<p>在后续配置之前默认已经安装好课程要求的<code>masm32</code>以及<code>Irvine32</code>库，下载完之后将各压缩包解压到自己想要的路径即可。</p>
+<h2 id="RadASM-v2-2-2-4"><a href="#RadASM-v2-2-2-4" class="headerlink" title="RadASM v2.2.2.4"></a>RadASM v2.2.2.4</h2><h3 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h3><h4 id="设置语言"><a href="#设置语言" class="headerlink" title="设置语言"></a>设置语言</h4><p><code>菜单-&gt;Option-&gt;Language-&gt;简体中文</code></p>
+<p class='item-img' data-src='/2023/09/22/RadASM+Masm%E6%B1%87%E7%BC%96%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8C%97/image-20230921200807531.png'><img src="/2023/09/22/RadASM+Masm%E6%B1%87%E7%BC%96%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8C%97/image-20230921200807531.png" alt="image-20230921200807531"></p>
+<h4 id="文本编码设置"><a href="#文本编码设置" class="headerlink" title="文本编码设置"></a>文本编码设置</h4><p><code>菜单-&gt;选项-&gt;字体选项-&gt;代码编辑</code></p>
+<p class='item-img' data-src='/2023/09/22/RadASM+Masm%E6%B1%87%E7%BC%96%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8C%97/image-20230921201014447.png'><img src="/2023/09/22/RadASM+Masm%E6%B1%87%E7%BC%96%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8C%97/image-20230921201014447.png" alt="image-20230921201014447"></p>
+<p>单击<code>代码编辑</code>，选择一个喜欢的字体以及大小（代码推荐宋体）然后点击右下方脚本，选择编码<code>GB2312</code>：</p>
+<p class='item-img' data-src='/2023/09/22/RadASM+Masm%E6%B1%87%E7%BC%96%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8C%97/image-20230921201249515.png'><img src="/2023/09/22/RadASM+Masm%E6%B1%87%E7%BC%96%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8C%97/image-20230921201249515.png" alt="image-20230921201249515"></p>
+<p>其余字体可以类似根据喜好设置。</p>
+<h4 id="路径设置"><a href="#路径设置" class="headerlink" title="路径设置"></a>路径设置</h4><p><code>菜单-&gt;选项-&gt;设置路径</code>，如图：</p>
+<p class='item-img' data-src='/2023/09/22/RadASM+Masm%E6%B1%87%E7%BC%96%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8C%97/image-20230921201701775.png'><img src="/2023/09/22/RadASM+Masm%E6%B1%87%E7%BC%96%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8C%97/image-20230921201701775.png" alt="image-20230921201701775"></p>
+<p>只需将<code>$A</code>对应路径改为本机<code>masm32</code>文件夹路径，<code>$E</code>对应路径改为之前解压的<code>odbg201</code>文件夹路径即可，注意路径大小写不敏感，填写时不要有歧义。</p>
+<h4 id="环境变量设置"><a href="#环境变量设置" class="headerlink" title="环境变量设置"></a>环境变量设置</h4><p><strong>！注意！</strong>此处环境变量<strong>不是</strong>系统环境变量，而是<code>RadASM</code>的环境变量。</p>
+<p><code>菜单-&gt;选项-&gt;环境变量</code></p>
+<p class='item-img' data-src='/2023/09/22/RadASM+Masm%E6%B1%87%E7%BC%96%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8C%97/image-20230921202507166.png'><img src="/2023/09/22/RadASM+Masm%E6%B1%87%E7%BC%96%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8C%97/image-20230921202507166.png" alt="image-20230921202507166"></p>
+<p>其中的<code>path</code>变量可以删除，因为我们已经设置过<code>$A</code>路径，也可以改为本机<code>masm32</code>文件夹路径。</p>
+<p>添加变量<code>include</code>，<code>lib</code>，值均为本机<code>Irvine32</code>文件夹路径，示例如下：</p>
+<p class='item-img' data-src='/2023/09/22/RadASM+Masm%E6%B1%87%E7%BC%96%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8C%97/image-20230921203028640.png'><img src="/2023/09/22/RadASM+Masm%E6%B1%87%E7%BC%96%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8C%97/image-20230921203028640.png" alt="image-20230921203028640"></p>
+<p>至此环境配置基本完成。</p>
+<h3 id="使用教程"><a href="#使用教程" class="headerlink" title="使用教程"></a>使用教程</h3><h4 id="新建工程"><a href="#新建工程" class="headerlink" title="新建工程"></a>新建工程</h4><p><code>文件-&gt;新建工程</code></p>
+<p class='item-img' data-src='/2023/09/22/RadASM+Masm%E6%B1%87%E7%BC%96%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8C%97/image-20230921203706565.png'><img src="/2023/09/22/RadASM+Masm%E6%B1%87%E7%BC%96%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8C%97/image-20230921203706565.png" alt="image-20230921203706565"></p>
+<p>可以根据需要选择工程类型，课程涉及到的主要为<code>Win32</code>窗口程序及控制台程序，这里用课程资料中给的<code>masm_code_example</code>中的<code>AddSubAlt.asm</code>以及<code>WinApp.asm</code>分别为例。</p>
+<p>选择工程类型以及完成命名后一直下一步即可。</p>
+<p>要选择<code>Realease</code>或<code>Debug</code>版本，在打开工程后点击<code>工程-&gt;工程选项</code>中选择。<strong>（使用Irvine库的程序在Debug版本下构建会有报错<code>LINK : fatal error LNK1000: unknown error; consult documentation for technical support options</code>，目前暂未找到原因，但是未使用Irvine库的程序正常）</strong></p>
+<h4 id="编译运行"><a href="#编译运行" class="headerlink" title="编译运行"></a>编译运行</h4><h5 id="控制台程序"><a href="#控制台程序" class="headerlink" title="控制台程序"></a>控制台程序</h5><p>工程目录结构如下：</p>
+<p class='item-img' data-src='/2023/09/22/RadASM+Masm%E6%B1%87%E7%BC%96%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8C%97/image-20230921204800956.png'><img src="/2023/09/22/RadASM+Masm%E6%B1%87%E7%BC%96%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8C%97/image-20230921204800956.png" alt="image-20230921204800956"></p>
+<p>将<code>AddSubAlt.asm</code>中的内容粘贴到<code>test.asm</code>中，</p>
+<p class='item-img' data-src='/2023/09/22/RadASM+Masm%E6%B1%87%E7%BC%96%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8C%97/image-20230921205226241.png'><img src="/2023/09/22/RadASM+Masm%E6%B1%87%E7%BC%96%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8C%97/image-20230921205226241.png" alt="image-20230921205226241"></p>
+<p>这四个快捷键分别为编译(Assemble)，构建(Build)，运行(Run)，构建并运行(Go)。</p>
+<p>点击构建会有<code>errLNK2001</code>报错，<strong>这是因为这段代码用到了<code>Irvine32</code>库，</strong>解决该错误我们需要在代码中加入如下几行：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs asm">includelib Irvine32.lib<br>includelib user32.lib<br>includelib kernel32.lib <br></code></pre></td></tr></table></figure>
+
+<p>此时再次构建，成功构建，但是此时运行控制台一闪而过看不到结果。</p>
+<p>为解决这个问题我们可以在命令行中直接运行<code>.exe</code>文件，但是切换路径非常麻烦，我们稍加配置可以一键打开当前工程目录下的<code>cmd</code>窗口或<code>PowerShell</code>窗口。</p>
+<p>点击<code>选项-&gt;工具菜单</code>:</p>
+<p class='item-img' data-src='/2023/09/22/RadASM+Masm%E6%B1%87%E7%BC%96%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8C%97/image-20230921210350574.png'><img src="/2023/09/22/RadASM+Masm%E6%B1%87%E7%BC%96%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8C%97/image-20230921210350574.png" alt="image-20230921210350574"></p>
+<p>点击插入，根据个人习惯不同菜单项为<code>&amp;command line</code>或<code>&amp;powershell</code>，对应的命令分别为<code>CMD.exe</code>或<code>POWERSHELL.exe</code>(若习惯用新版PowerShell而非Windows PowerShell则此处为<code>PWSH.exe</code>)，之后点击确定。</p>
+<p>此时在<code>工具</code>菜单中会出现相应的选项，同时图标栏也会出现对应按钮，点击即可快捷打开工程目录下的终端窗口，可以快捷运行程序：</p>
+<p class='item-img' data-src='/2023/09/22/RadASM+Masm%E6%B1%87%E7%BC%96%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8C%97/image-20230921211358176.png'><img src="/2023/09/22/RadASM+Masm%E6%B1%87%E7%BC%96%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8C%97/image-20230921211358176.png" alt="image-20230921211358176"></p>
+<h5 id="Win32窗口程序"><a href="#Win32窗口程序" class="headerlink" title="Win32窗口程序"></a>Win32窗口程序</h5><p>重新新建一个工程<code>test2</code>，选择<code>Win32 App</code>之后一直下一步，将<code>WinApp.asm</code>中的内容粘贴到<code>test2.asm</code>中。</p>
+<p>接着构建工程，会发现还是有<code>err LNK2001</code>，同样是因为使用了<code>Irvine32</code>库，因此我们需要在代码中补充：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs assembly">includelib Irvine32.lib<br>includelib user32.lib<br>includelib kernel32.lib <br></code></pre></td></tr></table></figure>
+
+<p>之后重新构建运行即可。</p>
+<h4 id="调试相关"><a href="#调试相关" class="headerlink" title="调试相关"></a>调试相关</h4><h5 id="利用RADbg-inc简单调试"><a href="#利用RADbg-inc简单调试" class="headerlink" title="利用RADbg.inc简单调试"></a>利用<code>RADbg.inc</code>简单调试</h5><p>在使用本调试方法时首先需要在代码中加入以下内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs assembly">include     windows.inc<br>include     user32.inc<br>include     kernel32.inc<br>includelib  user32.lib<br>includelib  kernel32.lib<br>include     radbg.inc ;注意该文件在RadASM根目录下\Masm\inc文件夹中，需要将该文件夹添加到程序环境变量中或以绝对路径引用<br></code></pre></td></tr></table></figure>
+
+<p>这种方法只能进行简单的调试，单个程序中只能加最多10个断点，而且并不支持单步调试，只能在断点处查看寄存器的值及特定变量的值。</p>
+<p>首先在想添加断点的代码行点击右键，选择<code>断点/切换断点</code>(快捷键Alt+F8)，此时可以再次右键，选择<code>断点/添加变量</code>来添加你希望在该断点处查看值的变量，之后重新构建运行即可。</p>
+<p>以<code>InputOutput.asm</code>为例，我在28行添加断点并添加监视变量<code>varA</code>：</p>
+<p class='item-img' data-src='/2023/09/22/RadASM+Masm%E6%B1%87%E7%BC%96%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8C%97/image-20230922000706810.png'><img src="/2023/09/22/RadASM+Masm%E6%B1%87%E7%BC%96%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8C%97/image-20230922000706810.png" alt="image-20230922000706810"></p>
+<h5 id="利用OllyDbg调试"><a href="#利用OllyDbg调试" class="headerlink" title="利用OllyDbg调试"></a>利用OllyDbg调试</h5><p>若要进行更为复杂的调试，我们可以在<code>OllyDbg</code>中进行调试，建议切换工程选项中版本为Debug(即调试)，然后构建工程，点击<code>菜单/构建/Run w/Debug</code>(快捷键 Ctrl + D)即可打开<code>OllyDbg</code>进行调试。</p>
+<p>关于具体<code>OllyDebug</code>的用法可以自行学习。</p>
+<h2 id="RadASM-v3-0"><a href="#RadASM-v3-0" class="headerlink" title="RadASM v3.0"></a>RadASM v3.0</h2><h3 id="环境配置-1"><a href="#环境配置-1" class="headerlink" title="环境配置"></a>环境配置</h3><p>首先3.0版本没有找到汉化版，因此只能英文界面操作，不过难度不大。</p>
+<h4 id="文本编码设置-1"><a href="#文本编码设置-1" class="headerlink" title="文本编码设置"></a>文本编码设置</h4><p>依次点击<code>Options-&gt;code Editer-&gt;code</code>，选择喜欢的中文字体并更改脚本为<code>GB2312</code>:</p>
+<p class='item-img' data-src='/2023/09/22/RadASM+Masm%E6%B1%87%E7%BC%96%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8C%97/image-20230922100321526.png'><img src="/2023/09/22/RadASM+Masm%E6%B1%87%E7%BC%96%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8C%97/image-20230922100321526.png" alt="image-20230922100321526"></p>
+<h4 id="环境变量设置-1"><a href="#环境变量设置-1" class="headerlink" title="环境变量设置"></a>环境变量设置</h4><p>3.0版本无法设置路径，所有的包含库，可执行文件，头文件都通过环境变量设置。</p>
+<p>点击<code>Options-&gt;Environments</code>：</p>
+<p>注意默认的<code>$A</code>指的是RadASM的根目录，即<code>RadASM.exe</code>所在的目录。</p>
+<p><code>path</code>项需要写本机<code>masm</code>路径及解压的<code>odbg201</code>路径；</p>
+<p><code>include</code>项需要<code>masm/include</code>路径以及<code>Irvine</code>路径；</p>
+<p><code>lib</code>项需要<code>masm/lib</code>路径以及<code>Irvine</code>路径：</p>
+<p class='item-img' data-src='image-20230922101233752.png'><img src="image-20230922101233752.png" alt="image-20230922101233752" style="zoom:67%;"><img src="image-20230922101259835.png" alt="image-20230922101259835" style="zoom:67%;" class='item-img' data-src='image-20230922101259835.png'><img src="image-20230922101259835.png" alt="image-20230922101259835" style="zoom:67%;"></p>
+<p>至此环境配置完成。</p>
+<h3 id="使用教程-1"><a href="#使用教程-1" class="headerlink" title="使用教程"></a>使用教程</h3><h4 id="新建工程-1"><a href="#新建工程-1" class="headerlink" title="新建工程"></a>新建工程</h4><p><code>Project-&gt;new project</code>:</p>
+<p class='item-img' data-src='/2023/09/22/RadASM+Masm%E6%B1%87%E7%BC%96%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8C%97/image-20230922101652747.png'><img src="/2023/09/22/RadASM+Masm%E6%B1%87%E7%BC%96%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8C%97/image-20230922101652747.png" alt="image-20230922101652747"></p>
+<p>在<code>build</code>中选择工程类型(也可以打开工程后在<code>Project-&gt;Project Options</code>中进行修改)<strong>（使用Irvine库的程序在Debug版本下构建会有报错<code>LINK : fatal error LNK1000: unknown error; consult documentation for technical support options</code>，目前暂未找到原因，但是未使用Irvine库的程序正常）</strong></p>
+<p>这里以<code>Console Realease</code>为例。</p>
+<h4 id="编译运行-1"><a href="#编译运行-1" class="headerlink" title="编译运行"></a>编译运行</h4><p>将<code>AddSubAlt.asm</code>中的代码粘贴到<code>test.asm</code>中，点击构建，有<code>err LINK2001</code>报错，因为使用了<code>Irvine</code>库，因此要添加代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs assembly">includelib Irvine32.lib<br>includelib user32.lib<br>includelib kernel32.lib <br></code></pre></td></tr></table></figure>
+
+<p>再次构建运行即可，控制台窗口依旧一闪而过，此时点击<code>Tools-&gt;command line</code>即可打开当前工程目录下的命令行窗口来运行程序。</p>
+<p>Win32窗口程序同理。</p>
+<h4 id="调试相关-1"><a href="#调试相关-1" class="headerlink" title="调试相关"></a>调试相关</h4><p>3.0版本没有<code>RADbg.inc</code>，因此推荐构建完成后使用<code>Ctrl + D</code>快捷键打开<code>OllyDbg</code>进行调试。</p>
+<h2 id="参考链接及文件来源"><a href="#参考链接及文件来源" class="headerlink" title="参考链接及文件来源"></a>参考链接及文件来源</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://masm32.com/board/index.php?board=24.0">RadAsm IDE Support</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/mrfearless/RadASM2/blob/master/Release/">RadASM-2.2.2.4-FullPackage</a></li>
+<li><a target="_blank" rel="noopener" href="http://underpop.online.fr/r/radasm/pages/rah_debug.htm">Integrated Debugging</a></li>
+<li><a target="_blank" rel="noopener" href="https://bbs.bccn.net/viewthread.php?tid=370928&authorid=608218">Radasm调试技巧</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.ollydbg.de/version2.html">OllyDbg 2.01</a></li>
+<li><a target="_blank" rel="noopener" href="https://bbs.kanxue.com/thread-269493-1.htm">OllyDbg V2.01 中文汉字语言包</a></li>
+</ul>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages" style="justify-content: flex-end"><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2023/09/17/PyAutoGUI%E5%BA%93%E8%AF%A6%E8%A7%A3/">python 第三方库 PyAutoGUI 详解 Prev →</a></div></div></div></div><div class="bottom-btn"><div><a id="to-top" onClick="scrolls.scrolltop();" title="To Top" style="opacity: 0; display: none;">∧</a><a id="to-index" href="#toc-div" title="To Catalog">≡</a><a id="color-mode" onClick="colorMode.change()" title="Change Theme"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">Jiuer Ma</a></h1><div id="description"><p></p></div><div id="social-links"><a class="social" target="_blank" rel="noopener" href="https://github.com/ma-b21"><i class="fab fa-github" alt="GitHub"></i></a><a class="social" href="mailto:mb_thu@163.com"><i class="fa fa-envelope" alt="E-Mail"></i></a></div></div><div id="aside-block"><div id="toc-div"><h1>Catalog</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#RadASM-Masm%E6%B1%87%E7%BC%96%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8C%97"><span class="toc-number">1.</span> <span class="toc-text">RadASM+Masm汇编开发环境配置指北</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD"><span class="toc-number">1.1.</span> <span class="toc-text">文件下载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RadASM-v2-2-2-4"><span class="toc-number">1.2.</span> <span class="toc-text">RadASM v2.2.2.4</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-number">1.2.1.</span> <span class="toc-text">环境配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E8%AF%AD%E8%A8%80"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">设置语言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E7%BC%96%E7%A0%81%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">文本编码设置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B7%AF%E5%BE%84%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.2.1.3.</span> <span class="toc-text">路径设置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.2.1.4.</span> <span class="toc-text">环境变量设置</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B"><span class="toc-number">1.2.2.</span> <span class="toc-text">使用教程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B0%E5%BB%BA%E5%B7%A5%E7%A8%8B"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">新建工程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E8%BF%90%E8%A1%8C"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">编译运行</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6%E5%8F%B0%E7%A8%8B%E5%BA%8F"><span class="toc-number">1.2.2.2.1.</span> <span class="toc-text">控制台程序</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Win32%E7%AA%97%E5%8F%A3%E7%A8%8B%E5%BA%8F"><span class="toc-number">1.2.2.2.2.</span> <span class="toc-text">Win32窗口程序</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B0%83%E8%AF%95%E7%9B%B8%E5%85%B3"><span class="toc-number">1.2.2.3.</span> <span class="toc-text">调试相关</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%A9%E7%94%A8RADbg-inc%E7%AE%80%E5%8D%95%E8%B0%83%E8%AF%95"><span class="toc-number">1.2.2.3.1.</span> <span class="toc-text">利用RADbg.inc简单调试</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%A9%E7%94%A8OllyDbg%E8%B0%83%E8%AF%95"><span class="toc-number">1.2.2.3.2.</span> <span class="toc-text">利用OllyDbg调试</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RadASM-v3-0"><span class="toc-number">1.3.</span> <span class="toc-text">RadASM v3.0</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE-1"><span class="toc-number">1.3.1.</span> <span class="toc-text">环境配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E7%BC%96%E7%A0%81%E8%AE%BE%E7%BD%AE-1"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">文本编码设置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E8%AE%BE%E7%BD%AE-1"><span class="toc-number">1.3.1.2.</span> <span class="toc-text">环境变量设置</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B-1"><span class="toc-number">1.3.2.</span> <span class="toc-text">使用教程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B0%E5%BB%BA%E5%B7%A5%E7%A8%8B-1"><span class="toc-number">1.3.2.1.</span> <span class="toc-text">新建工程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E8%BF%90%E8%A1%8C-1"><span class="toc-number">1.3.2.2.</span> <span class="toc-text">编译运行</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B0%83%E8%AF%95%E7%9B%B8%E5%85%B3-1"><span class="toc-number">1.3.2.3.</span> <span class="toc-text">调试相关</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5%E5%8F%8A%E6%96%87%E4%BB%B6%E6%9D%A5%E6%BA%90"><span class="toc-number">1.4.</span> <span class="toc-text">参考链接及文件来源</span></a></li></ol></li></ol></div></div><footer><nobr>Published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr>by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas><script src="/js/search.js"></script><script src="/js/arknights.js"></script><script src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script src="/js/pjax.js"></script><script class="pjax-js">reset= () => {code.findCode();
+document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script></body></html>
