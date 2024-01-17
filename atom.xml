@@ -6,7 +6,7 @@
   <link href="https://ma-b21.github.io/atom.xml" rel="self"/>
   
   <link href="https://ma-b21.github.io/"/>
-  <updated>2023-09-22T03:26:56.790Z</updated>
+  <updated>2024-01-17T15:00:04.260Z</updated>
   <id>https://ma-b21.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>后端模块设计</title>
+    <link href="https://ma-b21.github.io/2024/01/17/%E5%90%8E%E7%AB%AF%E8%AE%BE%E8%AE%A1/"/>
+    <id>https://ma-b21.github.io/2024/01/17/%E5%90%8E%E7%AB%AF%E8%AE%BE%E8%AE%A1/</id>
+    <published>2024-01-17T14:56:31.396Z</published>
+    <updated>2024-01-17T15:00:04.260Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="后端模块设计"><a href="#后端模块设计" class="headerlink" title="后端模块设计"></a>后端模块设计</h1><h4 id="后端架构"><a href="#后端架构" class="headerlink" title="后端架构"></a>后端架构</h4><ul><li><strong>服务器架构：</strong>采用 Django REST framework，一个基于 Django 的强大且灵活的 Web API 框架，适合于构建可维护、可扩展的 Web API。支持多种认证方式，易于集成第三方应用。</li><li><strong>服务间通信机制：</strong>利用 Django 的内部机制和中间件来进行模块间的数据传递和消息通知，确保高效且安全的服务间通信。</li></ul><h4 id="核心模块和功能实现"><a href="#核心模块和功能实现" class="headerlink" title="核心模块和功能实现"></a>核心模块和功能实现</h4><ul><li><p><strong>数据处理：</strong></p><ul><li><strong>数据库管理：</strong> 使用 Django ORM 管理数据库交互，包括数据的增删查改以及复杂查询优化。</li><li><strong>业务逻辑处理：</strong> 利用 Django REST framework 视图（如 APIView）处理具体业务逻辑。</li><li><strong>数据序列化：</strong> 使用 Django REST framework 的序列化器进行数据格式的转换，支持复杂数据结构。</li></ul></li><li><p><strong>第三方服务集成：</strong></p><ul><li><strong>电子邮件通知：</strong> 通过集成网易企业邮箱服务，实现通知和电子邮件发送。</li></ul></li><li><p><strong>用户管理（users）：</strong></p><ul><li><strong>继承与扩展 Django 用户认证系统：</strong> 用于用户注册和登录，支持微信登录。</li><li><strong>用户模型扩展：</strong> 扩展用户模型以包括额外字段（如头像等），满足特定业务需求。</li><li><strong>权限管理：</strong> 实现基于角色的权限控制，利用 Django Permission 模型进行细粒度的权限管理。</li></ul></li><li><p><strong>股票信息处理（stocks）：</strong></p><ul><li><strong>股票数据展示：</strong> 实现股票信息的实时更新和查询，如价格、交易量等。</li><li><strong>用户交易功能：</strong> 提供股票买卖、持仓查询、资产管理等功能。</li></ul></li><li><p><strong>新闻与公告（news）：</strong></p><ul><li><strong>股市新闻聚合：</strong> 自动收集和展示股市新闻、公司公告等。</li><li><strong>财经报告解读：</strong> 提供公司财报、研究报告的摘要和分析。</li></ul></li><li><p><strong>模拟交易游戏（games）：</strong></p><ul><li><strong>比赛创建与管理：</strong> 允许用户创建和参加模拟交易比赛，管理比赛规则和进度。</li><li><strong>交易模拟：</strong> 提供模拟股市环境，进行虚拟交易和资产管理。</li></ul></li><li><p><strong>论坛交流（forums）：</strong></p><ul><li><strong>帖子管理与互动：</strong> 支持发帖、评论、回复等，实现社区互动。</li><li><strong>社交功能：</strong> 提供点赞、收藏等功能，增强用户参与度。</li></ul></li><li><p><strong>搜索功能（search）：</strong></p><ul><li><strong>全站搜索：</strong> 实现对新闻、股票信息、论坛内容的全文搜索。</li><li><strong>搜索结果优化：</strong> 提供分类结果等功能，优化用户搜索体验。</li></ul></li></ul><h4 id="异步任务处理与-Celery"><a href="#异步任务处理与-Celery" class="headerlink" title="异步任务处理与 Celery"></a>异步任务处理与 Celery</h4><ul><li><strong>Celery 集成：</strong>集成 Celery 进行异步任务处理，用于处理后台任务和定时任务。Celery 提供了灵活的配置和多种任务执行选项。</li><li><strong>使用 Redis 作为消息代理：</strong>选择 Redis 作为 Celery 的消息代理，负责传递消息。Redis 以其高性能和低延迟特性，非常适合作为消息传递系统的后端。</li><li><strong>任务处理流程：</strong><ul><li>任务发布：Django 应用将异步任务发布到 Redis 消息队列中。</li><li>任务消费：Celery 工作进程监控消息队列，捕获新任务并进行处理。</li><li>结果存储：处理结果存储回数据库中，或者直接返回给用户。</li></ul></li><li><strong>容错与重试机制：</strong>配置 Celery 的重试策略，处理任务执行失败的情况。</li><li><strong>定时任务与计划任务：</strong>使用 Celery Beat 执行周期性任务，如数据备份、定期清理日志等。</li></ul><h4 id="接口规范"><a href="#接口规范" class="headerlink" title="接口规范"></a>接口规范</h4><ul><li><p><strong>API 设计：</strong>使用 Django REST framework 提供的 RESTful API，定义清晰、标准化的接口。</p></li><li><p><strong>请求和响应格式：</strong>使用JSON格式的数据进行请求与响应。</p></li><li><p><strong>安全协议：</strong>全站采用 HTTPS 保障数据传输安全。对所有敏感数据进行加密处理。</p></li><li><p><strong>认证和授权机制：</strong>系统综合利用了 PyJWT 和 OAuth 2.0 来实现全面的身份验证和授权管理。</p><ul><li>支持 OAuth 2.0 通过微信登录：小程序集成了微信登录，遵循 OAuth 2.0 协议，用户可以使用自己的微信账号安全地登录小程序。在这个过程中，小程序首先从微信获取授权码，然后交换获得访问令牌（Access Token），最终使用这个访问令牌获取用户在微信上的基本信息。这一流程确保了用户身份的安全验证，同时简化了登录步骤。</li><li>使用 PyJWT 生成 Token：在用户通过微信登录小程序后，系统使用 PyJWT 生成 JSON Web Tokens（JWT），这是一种紧凑且自包含的方式，用于在各方之间安全地传递信息。每个 JWT 包含了验证所需的所有信息，这使得系统能够高效地进行身份验证和信息传输。</li><li>自定义认证类：系统通过继承 Django REST framework（DRF）的认证类来自定义认证过程。这一自定义认证类使用 JWT 来确认和验证用户的身份。当用户进行后续请求时，系统通过解析和验证 JWT 来确认用户身份，确保安全性和有效性。</li></ul></li></ul><h4 id="数据库设计"><a href="#数据库设计" class="headerlink" title="数据库设计"></a>数据库设计</h4><ul><li><p><strong>数据库类型：</strong>主要使用 MySQL 作为存储数据库。适合复杂的查询和大量数据的处理。</p></li><li><p><strong>数据模型和关系：</strong>使用 Django ORM 定义数据模型，根据业务需求建立模型间关系。</p></li><li><p><strong>主要模型关系图：</strong></p><p class='item-img' data-src='/2024/01/17/%E5%90%8E%E7%AB%AF%E8%AE%BE%E8%AE%A1/models.png'><img src="/2024/01/17/%E5%90%8E%E7%AB%AF%E8%AE%BE%E8%AE%A1/models.png" alt="models"></p></li><li><p><strong>主要数据表设计：</strong></p><ul><li>用户表 (<code>UsersUsers</code>)：存储用户基本信息，如登录名、密码、电子邮件、头像、登录时间等。</li><li>用户权限表 (<code>AuthPermission, UsersUsersUserPermissions</code>)：定义系统权限和用户所拥有的权限。</li><li>Celery 相关表 (<code>DjangoCeleryBeatClockedschedule, DjangoCeleryBeatCrontabschedule, DjangoCeleryBeatIntervalschedule, DjangoCeleryBeatPeriodictask, DjangoCeleryBeatSolarschedule</code>)：存储 Celery 定时任务的计划和执行情况。</li><li>论坛帖子表 (<code>ForumsPost</code>)：存储论坛帖子的信息，如标题、内容、创建时间。</li><li>论坛评论表 (<code>ForumsComment</code>)：存储用户对论坛帖子的评论信息。</li><li>论坛回复表 (<code>ForumsReply</code>)：存储用户对论坛评论的回复信息。</li><li>比赛表 (<code>GamesGame</code>)：存储比赛的基本信息，如名称、描述、开始和结束时间。</li><li>比赛公告表 (<code>GamesGamenotice</code>)：存储比赛公告信息。</li><li>新闻表 (<code>NewsNews, NewsAnotice, NewsResearchreport</code>)：存储新闻、公告和研报的相关信息。</li><li>用户股市资产表 (<code>StocksUserassets</code>)：存储用户在股市模拟中的资产信息。</li><li>用户股市持仓表 (<code>StocksUserposition</code>)：存储用户在股市模拟中的持仓信息。</li><li>用户交易记录表 (<code>StocksUsertransrecords</code>)：存储用户的股市交易记录。</li><li>用户与各类内容的关联表：如 <code>ForumsCommentLikeUsers, ForumsPostCollectUsers, ForumsPostLikeUsers, ForumsReplyLikeUsers, GamesGameAdmins, GamesGamePlayers, GamesGameassets, GamesGamenoticeReaders</code> 等，这些表存储用户与论坛帖子、评论、游戏等的关联信息。</li></ul></li><li><p><strong>关系定义：</strong></p><ul><li>一对多关系：如 <code>ForumsPost</code> 和 <code>ForumsComment</code>，一个帖子可以有多个评论。</li><li>多对多关系：如<code>ForumsPostCollectUsers</code> 表展示了论坛帖子（<code>ForumsPost</code>）与用户（<code>UsersUsers</code>）之间的多对多关系。一个用户可以收藏多个帖子，而一个帖子也可以被多个用户收藏。</li><li>一对一关系：如 <code>UsersUsers</code> 和 <code>StocksUserassets</code>，表示用户与其资产信息的关系。</li></ul></li><li><p><strong>表间关系的特点</strong></p><ul><li>多个表通过外键和联合主键建立关联，形成复杂的数据关系网络。</li><li>某些表如 <code>DjangoCeleryBeatPeriodictask</code> 和 <code>DjangoCeleryBeatCrontabschedule</code> 等用于支持后台任务和调度。</li><li>用户行为和交互通过多个关联表进行跟踪，例如论坛帖子的点赞、收藏等。</li></ul></li></ul><h4 id="缓存机制"><a href="#缓存机制" class="headerlink" title="缓存机制"></a>缓存机制</h4><ul><li>使用 Redis 作为缓存后端：Redis 用于缓存常用查询、会话数据和用户认证信息等，提高应用性能并减轻对 MySQL 数据库的压力。Redis 的高性能键值存储能力，非常适合作为缓存解决方案。</li></ul><h4 id="安全性和异常处理"><a href="#安全性和异常处理" class="headerlink" title="安全性和异常处理"></a>安全性和异常处理</h4><ul><li><p>数据安全：实施常规安全措施，如输入验证、SQL 注入防护和敏感数据加密。</p></li><li><p>异常处理：通过 Django 的异常处理机制，实现错误捕获和用户友好的错误响应。</p></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;后端模块设计&quot;&gt;&lt;a href=&quot;#后端模块设计&quot; class=&quot;headerlink&quot; title=&quot;后端模块设计&quot;&gt;&lt;/a&gt;后端模块设计&lt;/h1&gt;&lt;h4 id=&quot;后端架构&quot;&gt;&lt;a href=&quot;#后端架构&quot; class=&quot;headerlink&quot; title=&quot;后</summary>
+      
+    
+    
+    
+    <category term="后端设计" scheme="https://ma-b21.github.io/categories/%E5%90%8E%E7%AB%AF%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>RadASM+Masm汇编开发环境配置指北</title>
