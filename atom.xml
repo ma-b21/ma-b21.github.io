@@ -6,7 +6,7 @@
   <link href="https://ma-b21.github.io/atom.xml" rel="self"/>
   
   <link href="https://ma-b21.github.io/"/>
-  <updated>2024-01-17T15:00:04.260Z</updated>
+  <updated>2024-03-26T13:31:56.257Z</updated>
   <id>https://ma-b21.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Docker 无法访问容器服务</title>
+    <link href="https://ma-b21.github.io/2024/03/26/docker%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E5%AE%B9%E5%99%A8%E6%9C%8D%E5%8A%A1/"/>
+    <id>https://ma-b21.github.io/2024/03/26/docker%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E5%AE%B9%E5%99%A8%E6%9C%8D%E5%8A%A1/</id>
+    <published>2024-03-26T13:23:52.948Z</published>
+    <updated>2024-03-26T13:31:56.257Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近配置docker容器的时候遇到的问题，在端口映射都配好之后无法通过本地访问容器内的服务，最后查阅资料发现是docker网络问题，重置解决。</p><h3 id="解决步骤"><a href="#解决步骤" class="headerlink" title="解决步骤"></a>解决步骤</h3><p class='item-img' data-src='/2024/03/26/docker%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E5%AE%B9%E5%99%A8%E6%9C%8D%E5%8A%A1/%E9%94%99%E8%AF%AF.png'><img src="/2024/03/26/docker%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E5%AE%B9%E5%99%A8%E6%9C%8D%E5%8A%A1/%E9%94%99%E8%AF%AF.png" alt="image-20240326212844135"></p><p>解决命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">systemctl stop docker<br>sudo ifconfig docker0 down<br>sudo brctl delbr docker0<br>systemctl start docker<br></code></pre></td></tr></table></figure><p>解决！</p><p class='item-img' data-src='/2024/03/26/docker%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E5%AE%B9%E5%99%A8%E6%9C%8D%E5%8A%A1/%E6%88%90%E5%8A%9F.png'><img src="/2024/03/26/docker%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E5%AE%B9%E5%99%A8%E6%9C%8D%E5%8A%A1/%E6%88%90%E5%8A%9F.png" alt="image-20240326212844135"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;最近配置docker容器的时候遇到的问题，在端口映射都配好之后无法通过本地访问容器内的服务，最后查阅资料发现是docker网络问题，重置解决。&lt;/p&gt;
+&lt;h3 id=&quot;解决步骤&quot;&gt;&lt;a href=&quot;#解决步骤&quot; class=&quot;headerlink&quot; title=&quot;解决步骤&quot;</summary>
+      
+    
+    
+    
+    <category term="Docker, 网络配置" scheme="https://ma-b21.github.io/categories/Docker-%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/"/>
+    
+    
+    <category term="Docker" scheme="https://ma-b21.github.io/tags/Docker/"/>
+    
+    <category term="Ubuntu" scheme="https://ma-b21.github.io/tags/Ubuntu/"/>
+    
+  </entry>
   
   <entry>
     <title>后端模块设计</title>
